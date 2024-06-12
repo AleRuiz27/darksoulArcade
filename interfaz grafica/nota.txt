@@ -1,0 +1,29 @@
+import tkinter as tk
+from tkinter import ttk
+#se crea funciion de  bienvenida
+def Bienvenida():
+    print("Hola Python")
+#crear ventana principal de a la aplicacion y se asigna una variable
+prueba = tk.Tk()
+#se asigna Titulo de la ventana principal
+prueba.title("Programa 1")
+#se configura la ventana principal  para tener un ancho y un alto
+prueba.config(width=800,height=600)
+#crea una venta secundaria (ventana de niverl superior) y se almacena en una variable
+fuentes = tk.Toplevel()
+#se asigna titulo a la segunda ventana
+fuentes.title("Programa 2")
+# se asigna ancho y alto por la segunda ventana
+fuentes.config(width=300,height=300)
+#crear un boton en el texto  y lo agrega a la ventana principal
+boton1 = ttk.Button(prueba,text="Hola Python")
+#crea un boton con el texto que llama a la ventana principal usando el gestor de geometria pack
+boton2 = ttk.Button(prueba,text="Chau Python",command=lambda:Bienvenida())
+boton1.pack()# uno abajo del otro.
+boton2.pack()#uno abajo del otro.
+#inicia el bluque del evento tkinter. que espera la interacciones del usuario
+prueba.mainloop()
+
+
+
+messagebox.showinfo(message="Mensaje", title="Título")
